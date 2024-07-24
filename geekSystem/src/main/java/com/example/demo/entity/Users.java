@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -11,6 +13,7 @@ import lombok.Data;
 @Data
 public class Users {
 	
+	private String id; //データベースで自動生成
 	
 	@Column(name = "store_id")
 	private String storeId;
@@ -33,5 +36,11 @@ public class Users {
 	
 	@Column(name = "permission_id")
 	private String permissionId;
+	
+	@Column(name = "created_at")
+	private LocalDateTime createdAt;
+
+	@Column(name = "updated_at")
+	private LocalDateTime updatedAt;
 
 }

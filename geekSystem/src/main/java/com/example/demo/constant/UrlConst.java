@@ -13,10 +13,10 @@ public class UrlConst {
 	public static final String TOP = "/geek/top";
 	
 	/** 商品管理TOP画面 **/
-	public static final String PRODUCTS_TOP = "/geek/products";
+	public static final String PRODUCTS_TOP = "/geek/products-top";
 	
 	/** 商品管理TOP画面 **/
-	public static final String USERS_TOP = "/geek/users";
+	public static final String USERS_TOP = "/geek/users-top";
 	
 	/** 認証不要画面 **/
 	public static final String[] NO_AUTHENTICATION = {LOGIN, "/webjars/**"};
