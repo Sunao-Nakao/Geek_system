@@ -1,24 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>トップ画面</title>
 </head>
 <body>
-	<div th:insert="common/sourceList::sourceList"></div>
-	<div th:replace="common/header::header"></div>
-	<div class="container-fluid">
-		<h2>トップメニュー</h2>
-		<div class="mt-3">
-			商品管理画面はこちら
-		</div>
-		<a href="" class="btn btn-primary">商品管理</a>
-		<th:block th:if="${hasUserManageAuth}">
-			<div class="mt-3">
-				ユーザ管理画面はこちら
-			</div>
-			<a href="" class="btn btn-danger">ユーザ管理</a>
-		</th:block>
-	</div>
+	トップ画面
 </body>
 </html>
