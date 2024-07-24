@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ユーザー管理TOP</title>
+</head>
+<body>
+	<div th:insert="common/sourceList::sourceList"></div>
+	<div th:replace="common/header::header"></div>
+	<div class="container-fluid">
+		<h2>ユーザー管理</h2>
+		<div>
+			<h3>ユーザ一覧</h3>
+		</div>	
+		<div>
+			<a th:href="@{/geek/signup}">
+				<p><button class="btn btn-primary">ユーザー登録</button>
+			</a>
+		</div>
+	</div>
+</body>
+</html>
