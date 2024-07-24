@@ -19,7 +19,7 @@ public class TopController {
 	public String view(@AuthenticationPrincipal User user, Model model) {
 		var hasUserManageAuth = user.getAuthorities().stream()
 				.allMatch(authority -> authority.getAuthority()
-					.equals(Permissions.ITEM_AND_USER_MANAGER.getPermissions()));
+					.equals(Permissions.ITEM_AND_USER_MANAGER.getCode()));
 		model.addAttribute("hasUserManageAuth", hasUserManageAuth);
 		return "top";
 	}

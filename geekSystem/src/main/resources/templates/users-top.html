@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ユーザー管理TOP</title>
+</head>
+<body>
+	<div th:insert="common/sourceList::sourceList"></div>
+	<div th:replace="common/header::header"></div>
+	<div class="container-fluid">
+		<h2 class="mt-3">ユーザ管理</h2>
+		
+		
+		<div class="mt-3">
+			<form th:action="@{/users}" method="post">
+				<table class="table table-striped" id="usersTop">
+					<thead>
+						<tr>
+							<th scope="col"></th>
+							<th scope="col">ID</th>
+							<th scope="col">姓</th>
+							<th scope="col">名</th>
+							<th scope="col">メールアドレス</th>
+							<th scope="col">役職</th>
+							<th scope="col">権限</th>
+							<th scope="col">電話番号</th>
+							<th scope="col">作成日時</th>
+							<th scope="col">更新日時</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="user, stat : ${users}">
+							<th scope="row" th:text="${stat.count}"></th>
+							<td th:text="${user.id}"></td>
+							<td th:text="${user.firstName}"></td>
+							<td th:text="${user.lastName}"></td>
+							<td th:text="${user.email}"></td>
+							<td th:text="${user.roleId}"></td>
+							<td th:text="${user.permissionId}"></td>
+							<td th:text="${user.phone}"></td>
+							<td th:text="${user.createdAt}"></td>
+							<td th:text="${user.updatedAt}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>	
+		
+		
+		<div>
+			<a th:href="@{/geek/signup}">
+				<p><button class="btn btn-primary">ユーザー登録</button>
+			</a>
+		</div>
+	</div>
+</body>
+</html>
