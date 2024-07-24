@@ -5,20 +5,29 @@
 <title>ログイン画面</title>
 </head>
 <body>
-	<h2>ログイン画面</h2>
-	<span th:text="${errorMsg}"></span>
-	<form th:action="@{/geek/login}" method="post" th:object="${loginForm}">
-		<div>
-			<label>メールアドレス</label>
-			<input type="text" th:field="*{email}">
+	<div th:insert="common/sourceList::sourceList"></div>
+	
+	<div class="container-fluid">
+		<h2>ログイン</h2>
+		<div class="alert alert-danger d-flex align-items-center" role="alert" th:if="${isError}">
+			<span th:text="${errorMsg}"></span>
 		</div>
-		<div>
-			<label>パスワード</label>
-			<input type="password" th:field="*{password}">
-		</div>
-		<div>
-			<input type="submit" value="ログイン">
-		</div>
-	</form>
+		<form th:action="@{/geek/login}" method="post" th:object="${loginForm}">
+			<div class="form-group">
+				<div class="col-4 col-md-2 col-xxl-2">
+					<p><label for="email">メールアドレス</label>
+					<input class="form-control" type="text" th:field="*{email}">
+				</div>
+				<span class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+				<div class="col-4 col-md-2 col-xxl-2">
+					<p><label for="password">パスワード</label>
+					<input class="form-control" type="password" th:field="*{password}">
+				</div>
+				<span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+				<p><input class="btn btn-primary" type="submit" value="ログイン">
+			</div>
+		</form>
+		
+	</div>
 </body>
 </html>
