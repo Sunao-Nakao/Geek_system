@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>商品管理TOP</title>
+</head>
+<body>
+	<div th:insert="common/sourceList::sourceList"></div>
+	<div th:replace="common/header::header"></div>
+	<h2>商品管理</h2>
+	<h3>検索</h3>
+	<h3>大カテゴリ一覧</h3>
+	<h3>発注履歴</h3>
+	<div>
+		<a th:href="@{/geek/signup}">
+			<button>新規登録</button>
+		</a>
+	</div>
+</body>
+</html>
